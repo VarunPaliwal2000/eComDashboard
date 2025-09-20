@@ -1,13 +1,13 @@
-import React from 'react';
-import { useTheme } from '../context/ThemeContext';
-import { FaSun, FaMoon } from 'react-icons/fa';
+import React from "react";
+import { FaMoon, FaSun } from "react-icons/fa";
+import { useTheme } from "../utils/themeHelpers";
 
 const ThemeToggle = () => {
   const { dark, toggleTheme } = useTheme();
 
   return (
-    <button className="p-2 rounded-md focus:outline-none" onClick={toggleTheme} aria-label="Toggle theme">
-      {dark ? <FaSun size={20} /> : <FaMoon size={20} />}
+    <button onClick={toggleTheme} aria-label="Toggle theme">
+      {dark ? <FaSun size={20} /> : <FaMoon size={18} />}
     </button>
   );
 };
