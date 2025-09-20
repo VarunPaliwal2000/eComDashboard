@@ -1,6 +1,9 @@
 import ProjectionVSActualsGraph from "../components/graphs/ProjectionVSActualsGraph";
 import RevenueChart from "../components/graphs/RevenueChart";
+import TotalSalesPiechart from "../components/graphs/TotalSalesPieChart";
 import MetricsTiles from "../components/MetricTiles";
+import RevenueByLocation from "../components/RevenueByLocation";
+import TopSellingProductsTable from "../components/tables/TopSellingProdtable";
 
 const Dashboard = () => (
   <div className="p-[28px]">
@@ -8,24 +11,29 @@ const Dashboard = () => (
       eCommerce
     </div>
     <div className="grid gap-7">
-      {/* 1st Row: Four stats cards */}
       <div className="grid grid-cols-2 gap-7">
-        <MetricsTiles />
-        <div className="bg-[#F7F9FB] rounded-2xl">
+        <div className="h-[252px]">
+          <MetricsTiles />
+        </div>
+        <div className="bg-[#F7F9FB] rounded-2xl h-[252px] p-6">
           <ProjectionVSActualsGraph />
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-7">
-        <div className="bg-[#F7F9FB] rounded-2xl h-[300px] col-span-2 p-6">
+      <div className="grid grid-cols-3 gap-7 h-[318px]">
+        <div className="bg-[#F7F9FB] rounded-2xl  col-span-2 p-6">
           <RevenueChart />
+        </div>
+        <div>
+          <RevenueByLocation />
+        </div>
+        <div className="bg-[#F7F9FB] rounded-2xl h-[336px] col-span-2 p-6">
+          <TopSellingProductsTable />
+        </div>
+        <div className="bg-[#F7F9FB] rounded-2xl h-[336px]">
+          <TotalSalesPiechart />
         </div>
         <div></div>
       </div>
-      {/* <div className="">Projections vs Actuals</div> */}
-      {/* 2nd Row: Projections + Revenue charts */}
-      {/* <div className=""> */}
-      {/* </div> */}
-      <div className="">Revenue by Location</div>
     </div>
   </div>
 );

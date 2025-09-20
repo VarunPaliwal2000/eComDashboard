@@ -1,0 +1,167 @@
+export const ordersData = [
+  {
+    id: "#CM9801",
+    user: {
+      name: "Natali Craig",
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+    project: "Landing Page",
+    address: "Meadow Lane Oakland",
+    date: "Just now",
+    status: { label: "In Progress", color: "text-blue-500" },
+  },
+  {
+    id: "#CM9802",
+    user: {
+      name: "Kate Morrison",
+      avatar: "https://randomuser.me/api/portraits/women/65.jpg",
+    },
+    project: "CRM Admin pages",
+    address: "Larry San Francisco",
+    date: "A minute ago",
+    status: { label: "Complete", color: "text-green-500" },
+  },
+  {
+    id: "#CM9803",
+    user: {
+      name: "Drew Cano",
+      avatar: "https://randomuser.me/api/portraits/men/75.jpg",
+    },
+    project: "Client Project",
+    address: "Bagwell Avenue Ocala",
+    date: "1 hour ago",
+    status: { label: "Pending", color: "text-sky-400" },
+  },
+  {
+    id: "#CM9804",
+    user: {
+      name: "Orlando Diggs",
+      avatar: "https://randomuser.me/api/portraits/men/82.jpg",
+    },
+    project: "Admin Dashboard",
+    address: "Washburn Baton Rouge",
+    date: "Yesterday",
+    status: { label: "Approved", color: "text-amber-400" },
+  },
+  {
+    id: "#CM9805",
+    user: {
+      name: "Andi Lane",
+      avatar: "https://randomuser.me/api/portraits/women/83.jpg",
+    },
+    project: "App Landing Page",
+    address: "Nest Lane Olivette",
+    date: "Feb 2, 2023",
+    status: { label: "Rejected", color: "text-gray-500" },
+  },
+  {
+    id: "#CM9801",
+    user: {
+      name: "Natali Craig",
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+    project: "Landing Page",
+    address: "Meadow Lane Oakland",
+    date: "Just now",
+    status: { label: "In Progress", color: "text-blue-500" },
+  },
+  {
+    id: "#CM9802",
+    user: {
+      name: "Kate Morrison",
+      avatar: "https://randomuser.me/api/portraits/women/65.jpg",
+    },
+    project: "CRM Admin pages",
+    address: "Larry San Francisco",
+    date: "A minute ago",
+    status: { label: "Complete", color: "text-green-500" },
+  },
+  {
+    id: "#CM9803",
+    user: {
+      name: "Drew Cano",
+      avatar: "https://randomuser.me/api/portraits/men/75.jpg",
+    },
+    project: "Client Project",
+    address: "Bagwell Avenue Ocala",
+    date: "1 hour ago",
+    status: { label: "Pending", color: "text-sky-400" },
+  },
+  {
+    id: "#CM9804",
+    user: {
+      name: "Orlando Diggs",
+      avatar: "https://randomuser.me/api/portraits/men/82.jpg",
+    },
+    project: "Admin Dashboard",
+    address: "Washburn Baton Rouge",
+    date: "Yesterday",
+    status: { label: "Approved", color: "text-amber-400" },
+  },
+  {
+    id: "#CM9805",
+    user: {
+      name: "Andi Lane",
+      avatar: "https://randomuser.me/api/portraits/women/83.jpg",
+    },
+    project: "App Landing Page",
+    address: "Nest Lane Olivette",
+    date: "Feb 2, 2023",
+    status: { label: "Rejected", color: "text-gray-500" },
+  },
+  {
+    id: "#CM9801",
+    user: {
+      name: "Natali Craig",
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+    project: "Landing Page",
+    address: "Meadow Lane Oakland",
+    date: "Just now",
+    status: { label: "In Progress", color: "text-blue-500" },
+  },
+  {
+    id: "#CM9802",
+    user: {
+      name: "Kate Morrison",
+      avatar: "https://randomuser.me/api/portraits/women/65.jpg",
+    },
+    project: "CRM Admin pages",
+    address: "Larry San Francisco",
+    date: "A minute ago",
+    status: { label: "Complete", color: "text-green-500" },
+  },
+  {
+    id: "#CM9803",
+    user: {
+      name: "Drew Cano",
+      avatar: "https://randomuser.me/api/portraits/men/75.jpg",
+    },
+    project: "Client Project",
+    address: "Bagwell Avenue Ocala",
+    date: "1 hour ago",
+    status: { label: "Pending", color: "text-sky-400" },
+  },
+  {
+    id: "#CM9804",
+    user: {
+      name: "Orlando Diggs",
+      avatar: "https://randomuser.me/api/portraits/men/82.jpg",
+    },
+    project: "Admin Dashboard",
+    address: "Washburn Baton Rouge",
+    date: "Yesterday",
+    status: { label: "Approved", color: "text-amber-400" },
+  },
+  {
+    id: "#CM9805",
+    user: {
+      name: "Andi Lane",
+      avatar: "https://randomuser.me/api/portraits/women/83.jpg",
+    },
+    project: "App Landing Page",
+    address: "Nest Lane Olivette",
+    date: "Feb 2, 2023",
+    status: { label: "Rejected", color: "text-gray-500" },
+  },
+];
