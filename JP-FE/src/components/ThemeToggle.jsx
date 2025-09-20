@@ -1,13 +1,12 @@
-import React from "react";
+import { useContext } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
-import { useTheme } from "../utils/themeHelpers";
+import ThemeContext from "../context/ThemeContext";
 
 const ThemeToggle = () => {
-  const { dark, toggleTheme } = useTheme();
-
+  const { darkMode, toggleTheme } = useContext(ThemeContext);
   return (
     <button onClick={toggleTheme} aria-label="Toggle theme">
-      {dark ? <FaSun size={20} /> : <FaMoon size={18} />}
+      {darkMode ? <FaSun size={20} /> : <FaMoon size={18} />}
     </button>
   );
 };

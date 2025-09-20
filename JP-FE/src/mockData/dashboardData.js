@@ -110,7 +110,7 @@ export const revenueChartData = [
 ];
 
 export const totalSalesPieChartData = [
-  { name: "Direct", value: 300.56, color: "#222222" },
+  { name: "Direct", value: 300.56, color: "#222222", darkColor: "#C6C7F8" },
   { name: "Affiliate", value: 135.18, color: "#7de39e" },
   { name: "Sponsored", value: 154.02, color: "#93A8FF" },
   { name: "E-mail", value: 48.96, color: "#90b4e8" },
@@ -232,13 +232,17 @@ export const metrics = [
     change: "+11.01%",
     positive: true,
     bgColor: "bg-[#E3F5FF]",
+    textColor: "#111827",
   },
   {
     title: "Orders",
     value: "1,219",
     change: "-0.03%",
     positive: false,
-    bgColor: "bg-[#F7F9FB]",
+    bgColor: "bg-[#E3F5FF]",
+    darkbgColor: "bg-[#FFFFFF0D]",
+    textColor: "#111827",
+    darktextcolor: "#F3F4F6",
   },
   {
     title: "Revenue",
@@ -246,12 +250,16 @@ export const metrics = [
     change: "+15.03%",
     positive: true,
     bgColor: "bg-[#F7F9FB]",
+    darkbgColor: "bg-[#FFFFFF0D]",
+    textColor: "#111827",
+    darktextcolor: "#F3F4F6",
   },
   {
     title: "Growth",
     value: "30.1%",
     change: "+6.08%",
     positive: true,
+    textColor: "#111827",
     bgColor: "bg-[#E5ECF6]",
   },
 ];
@@ -261,4 +269,37 @@ export const LOCATION_DATA = [
   { name: "San Francisco", revenue: 39, color: "bg-blue-400" },
   { name: "Sydney", revenue: 25, color: "bg-blue-400" },
   { name: "Singapore", revenue: 61, color: "bg-blue-400" },
+];
+
+export const products = [
+  {
+    name: "ASOS Ridley High Waist",
+    price: 79.49,
+    quantity: 82,
+    amount: 6518.18,
+  },
+  {
+    name: "Marco Lightweight Shirt",
+    price: 128.5,
+    quantity: 37,
+    amount: 4754.5,
+  },
+  {
+    name: "Half Sleeve  Shirt",
+    price: 39.99,
+    quantity: 64,
+    amount: 2559.36,
+  },
+  {
+    name: "Lightweight Jacket",
+    price: 20.0,
+    quantity: 184,
+    amount: 3680.0,
+  },
+  {
+    name: "Marco Shoes",
+    price: 79.49,
+    quantity: 64,
+    amount: 1965.81,
+  },
 ];

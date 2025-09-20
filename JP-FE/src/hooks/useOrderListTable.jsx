@@ -47,7 +47,7 @@ export function useOrderListTable() {
         accessorKey: "id",
         header: "Order ID",
         cell: (info) => (
-          <span className="font-inter font-normal text-xs leading-[18px] tracking-normal text-[#1C1C1C]">
+          <span className="font-inter font-normal text-xs leading-[18px] tracking-normal">
             {info.getValue()}
           </span>
         ),
@@ -63,7 +63,7 @@ export function useOrderListTable() {
               className="w-8 h-8 rounded-full object-cover"
               loading="lazy"
             />
-            <span className="font-inter font-normal text-xs leading-[18px] tracking-normal text-[#1C1C1C]">
+            <span className="font-inter font-normal text-xs leading-[18px] tracking-normal">
               {row.original.user.name}
             </span>
           </div>
@@ -73,7 +73,7 @@ export function useOrderListTable() {
         accessorKey: "project",
         header: "Project",
         cell: (info) => (
-          <span className="font-inter font-normal text-xs leading-[18px] tracking-normal text-[#1C1C1C]">
+          <span className="font-inter font-normal text-xs leading-[18px] tracking-normal">
             {info.getValue()}
           </span>
         ),
@@ -82,7 +82,7 @@ export function useOrderListTable() {
         accessorKey: "address",
         header: "Address",
         cell: (info) => (
-          <span className="font-inter font-normal text-xs leading-[18px] tracking-normal text-[#1C1C1C]">
+          <span className="font-inter font-normal text-xs leading-[18px] tracking-normal">
             {info.getValue()}
           </span>
         ),
@@ -106,7 +106,7 @@ export function useOrderListTable() {
                 d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2v-5H3v5a2 2 0 002 2z"
               />
             </svg>
-            <span className="font-inter font-normal text-xs leading-[18px] tracking-normal text-[#1C1C1C]">
+            <span className="font-inter font-normal text-xs leading-[18px] tracking-normal">
               {info.getValue()}
             </span>
           </div>
@@ -117,7 +117,7 @@ export function useOrderListTable() {
         header: "Status",
         cell: ({ row }) => (
           <span
-            className={`flex items-center gap-2 font-inter font-normal text-xs leading-[18px] tracking-normal ${row.original.status.color}`}
+            className={`flex items-center g font-inter font-normal text-xs leading-[18px] tracking-normal ${row.original.status.color}`}
           >
             <svg className="w-3 h-3 fill-current" viewBox="0 0 8 8">
               <circle cx="4" cy="4" r="4" />

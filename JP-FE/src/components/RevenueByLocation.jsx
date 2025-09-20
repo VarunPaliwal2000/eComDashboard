@@ -2,19 +2,25 @@ import { LOCATION_DATA } from "../mockData/dashboardData";
 
 const maxRevenue = Math.max(...LOCATION_DATA.map((l) => l.revenue));
 
-export default function RevenueByLocation() {
+export default function RevenueByLocation({ darkMode }) {
   return (
-    <div className="rounded-xl bg-[#F7F9FB] p-5 w-[320px] shadow space-y-4">
-      <h3 className="font-semibold text-lg text-[#23272E]">
-        Revenue by Location
-      </h3>
+    <div
+      className="rounded-xl p-5 w-[320px] shadow space-y-4"
+      style={{
+        backgroundColor: darkMode ? "#FFFFFF0D" : "#F7F9FB",
+        color: darkMode ? "#E5E7EB" : "#23272E",
+      }}
+    >
+      <h3 className="font-semibold text-lg">Revenue by Location</h3>
       <div className="relative h-24 w-full flex items-center justify-center">
-        {/* Placeholder for world map image or svg */}
-        <div className="w-full h-24 rounded bg-gray-100 flex items-center justify-center text-sm text-gray-500">
-          {/* Replace this div with a real world map image/svg for production */}
+        <div
+          className="w-full h-24 rounded flex items-center justify-center text-sm"
+          style={{
+            backgroundColor: darkMode ? "#2A2E43" : "#E5E7EB",
+            color: darkMode ? "#CBD5E1" : "#6B7280",
+          }}
+        >
           World Map
-          {/* Optionally, dot icons can be laid out here using absolute positioning for each city */}
-          {/* <FaCircle className="absolute left-8 top-6 text-blue-600" size={11} /> */}
         </div>
       </div>
       <div className="space-y-4">
@@ -22,17 +28,23 @@ export default function RevenueByLocation() {
           <div key={location.name}>
             <div className="flex justify-between items-center font-sans font-normal text-3 leading-[18px] space-y-[10px]">
               <span>{location.name}</span>
-              <span className="text-[#313957] text-[15px] font-medium">
+              <span
+                className="text-[15px] font-medium"
+                style={{ color: darkMode ? "#CBD5E1" : "#313957" }}
+              >
                 {location.revenue}K
               </span>
             </div>
             <div className="flex w-full items-center">
-              <div className="w-full h-[2px] bg-[#F1F1F1] rounded-[80px] relative overflow-hidden">
-                {/* Main progress fill */}
+              <div
+                className="w-full h-[2px] rounded-[80px] relative overflow-hidden"
+                style={{ backgroundColor: darkMode ? "#334155" : "#F1F1F1" }}
+              >
                 <div
-                  className="h-full rounded-[80px] bg-[#A8C5DA] absolute left-0 top-0"
+                  className="h-full rounded-[80px] absolute left-0 top-0"
                   style={{
                     width: `${(location.revenue / maxRevenue) * 100}%`,
+                    backgroundColor: darkMode ? "#6188B8" : "#A8C5DA",
                   }}
                 />
               </div>
