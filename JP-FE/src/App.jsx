@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from "react";
+import { useContext, useEffect, useMemo } from "react";
 import {
   BrowserRouter,
   Route,
@@ -7,18 +7,32 @@ import {
   useNavigate,
 } from "react-router-dom";
 import Header from "./components/header/Header";
-import { ThemeProvider } from "./context/ThemeContext";
+import RightSidebar from "./components/sidebar/RightSidebar";
+import Sidebar from "./components/sidebar/SideBar";
+import ThemeContext, { ThemeProvider } from "./context/ThemeContext";
 import Dashboard from "./pages/Dashboard";
 import OrderList from "./pages/OrderList";
 import setSideNavParams from "./utils/SetSidenavVisibilty";
-import RightSidebar from "./components/sidebar/RightSidebar";
-import Sidebar from "./components/sidebar/SideBar";
 
 function AppContent() {
   const location = useLocation();
-  console.log(location);
   const navigate = useNavigate();
-  // useEffect(() => {}, [location.pathname, location.search, navigate]);
+  const { darkMode } = useContext(ThemeContext); 
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.style.backgroundColor = "#121212"; 
+      document.body.style.color = "#E5E7EB"; 
+    } else {
+      document.body.style.backgroundColor = "#ffffff"; 
+      document.body.style.color = "#1C1C1C";
+    }
+
+    return () => {
+      document.body.style.backgroundColor = "";
+      document.body.style.color = "";
+    };
+  }, [darkMode]);
   useEffect(() => {
     if (location.pathname === "/") {
       navigate("/dashboards/default/overview" + location.search, {
@@ -30,19 +44,11 @@ function AppContent() {
       search: location.search,
     });
     if (newUrl.search !== window.location.search && location.pathname !== "/") {
-      console.log("navigatenavigate", newUrl.pathname, newUrl.searchParams);
       navigate(newUrl.pathname + newUrl.searchParams, { replace: true });
     }
-    console.log(
-      "newUrl",
-      newUrl.pathname + newUrl.searchParams,
-      window.location.search,
-      location?.pathname
-    );
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [location.pathname, JSON.stringify(location.search)]);
 
-  // // Memoize reading of current params for Sidebar visibility
   const queryParams = useMemo(() => {
     const params = new URLSearchParams(location.search);
     return {
@@ -50,21 +56,32 @@ function AppContent() {
       rightsidenav: params.get("rightsidenav") === "true",
     };
   }, [location.search]);
-  console.log("queryParams", queryParams, queryParams?.rightsidenav);
 
   return (
-    <div className="flex h-full">
-      {queryParams?.leftsidenav && <Sidebar />}
-      <div className="flex-1 w-full flex flex-col">
-        <Header />
+    <div
+      className={`flex bg-${darkMode ? "[#121212]" : "white"} text-${
+        darkMode ? "gray-200" : "gray-900"
+      }`}
+    >
+      {queryParams?.leftsidenav && <Sidebar darkMode={darkMode} />}
+      <div
+        className="flex-1 w-full flex flex-col"
+        style={{
+          backgroundColor: darkMode ? "#121212" : "#fff",
+          minHeight: "100vh",
+        }}
+      >
+        <Header darkMode={darkMode} />
         <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/dashboards/*" element={<Dashboard />} />
-          <Route path="/pages/*" element={<OrderList />} />
-          {/* Add additional routes here */}
+          <Route path="/" element={<Dashboard darkMode={darkMode} />} />
+          <Route
+            path="/dashboards/*"
+            element={<Dashboard darkMode={darkMode} />}
+          />
+          <Route path="/pages/*" element={<OrderList darkMode={darkMode} />} />
         </Routes>
       </div>
-      {queryParams?.rightsidenav && <RightSidebar />}
+      {queryParams?.rightsidenav && <RightSidebar darkMode={darkMode} />}
     </div>
   );
 }
