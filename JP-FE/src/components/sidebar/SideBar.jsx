@@ -1,13 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
 import ThemeContext from "../../context/ThemeContext"; // adjust import path
-import { MENU_DATA } from "../../mockData/sidebardata";
 import getModuleName from "../../utils/getModuleName";
 import MenuRecursive from "./MenuRecursive";
 
-export default function Sidebar() {
+export default function Sidebar({ darkMode, sideBarMenu }) {
   const location = useLocation();
-  const { darkMode } = useContext(ThemeContext);
   const moduleName = getModuleName(location?.pathname);
   const [open, setOpen] = useState(new Set([moduleName || "Default"]));
   const [tabNavActive, setTabNavActive] = useState(1);
@@ -20,6 +18,11 @@ export default function Sidebar() {
       return s;
     });
   };
+  if (!sideBarMenu) {
+    return <div>No data found.</div>;
+  }
+  const menuData = sideBarMenu?.MENU_DATA;
+
   return (
     <aside
       style={{
@@ -93,7 +96,7 @@ export default function Sidebar() {
         </ul>
       </div>
 
-      {MENU_DATA[tabNavs[tabNavActive]]?.map(
+      {menuData[tabNavs[tabNavActive]]?.map(
         ({ section, headerClass, items }) => (
           <React.Fragment
             key={section}

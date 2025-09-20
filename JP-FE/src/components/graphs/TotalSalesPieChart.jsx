@@ -1,13 +1,16 @@
-import React, { useContext } from "react";
 import { Cell, Pie, PieChart } from "recharts";
-import ThemeContext from "../../context/ThemeContext";
-import { totalSalesPieChartData } from "../../mockData/dashboardData";
 
-const total = totalSalesPieChartData.reduce((acc, item) => acc + item.value, 0);
-const percentage = ((totalSalesPieChartData[0].value / total) * 100).toFixed(1);
-
-export default function TotalSalesPiechart() {
-  const { darkMode } = useContext(ThemeContext);
+export default function TotalSalesPiechart({
+  darkMode,
+  totalSalesPieChartData,
+}) {
+  const total = totalSalesPieChartData.reduce(
+    (acc, item) => acc + item.value,
+    0
+  );
+  const percentage = ((totalSalesPieChartData[0].value / total) * 100).toFixed(
+    1
+  );
 
   const bgColor = darkMode ? "#222" : "#fff";
   const textColor = darkMode ? "#E5E7EB" : "#222";

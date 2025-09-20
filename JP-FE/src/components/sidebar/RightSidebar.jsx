@@ -1,14 +1,10 @@
-import { useContext } from "react";
-import ThemeContext from "../../context/ThemeContext";
-import {
-  activities,
-  contacts,
-  notifications,
-} from "../../mockData/dashboardData";
 import { RightSidebarInfoGrid } from "./RightSidebarInfoGrid";
 
-const RightSidebar = () => {
-  const { darkMode } = useContext(ThemeContext);
+const RightSidebar = ({ darkMode, sideBarMenu }) => {
+  if (!sideBarMenu) {
+    return <div>No data found.</div>;
+  }
+  const { activities, contacts, notifications } = sideBarMenu;
 
   return (
     <aside

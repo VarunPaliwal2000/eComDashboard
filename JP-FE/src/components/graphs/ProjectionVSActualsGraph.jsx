@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import {
   Bar,
   BarChart,
@@ -10,9 +10,8 @@ import {
   YAxis,
 } from "recharts";
 import ThemeContext from "../../context/ThemeContext";
-import { projectionVsActualData } from "../../mockData/dashboardData";
 
-const ProjectionVSActualsGraph = () => {
+const ProjectionVSActualsGraph = ({ projectionVsActualData }) => {
   const { darkMode } = useContext(ThemeContext);
 
   const gridStroke = darkMode ? "#2C2C2C" : "#eceef0";

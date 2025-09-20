@@ -1,8 +1,5 @@
-import { LOCATION_DATA } from "../mockData/dashboardData";
-
-const maxRevenue = Math.max(...LOCATION_DATA.map((l) => l.revenue));
-
-export default function RevenueByLocation({ darkMode }) {
+export default function RevenueByLocation({ darkMode, data }) {
+  const maxRevenue = Math.max(...data.map((l) => l.revenue));
   return (
     <div
       className="rounded-xl p-5 w-[320px] shadow space-y-4"
@@ -24,7 +21,7 @@ export default function RevenueByLocation({ darkMode }) {
         </div>
       </div>
       <div className="space-y-4">
-        {LOCATION_DATA.map((location) => (
+        {data.map((location) => (
           <div key={location.name}>
             <div className="flex justify-between items-center font-sans font-normal text-3 leading-[18px] space-y-[10px]">
               <span>{location.name}</span>

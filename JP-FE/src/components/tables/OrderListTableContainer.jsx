@@ -4,9 +4,8 @@ import { HeaderInput } from "../header/HeaderInput";
 import OrderListTable from "./OrderListTable";
 
 export default function OrderListTableContainer({ darkMode }) {
-  const { table } = useOrderListTable(darkMode);
-
-  const bgColor = darkMode ? "#121212" : "white"; 
+  const { table } = useOrderListTable();
+  const bgColor = darkMode ? "#121212" : "white";
   const btnBg = darkMode ? "#FFFFFF0D" : "bg-gray-100";
   const textColor = darkMode ? "#E5E7EB" : "#000";
 

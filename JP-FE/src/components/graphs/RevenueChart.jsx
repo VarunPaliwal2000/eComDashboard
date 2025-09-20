@@ -9,15 +9,14 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import ThemeContext from "../../context/ThemeContext"; 
-import { revenueChartData } from "../../mockData/dashboardData";
+import ThemeContext from "../../context/ThemeContext";
 
-const RevenueChart = () => {
+const RevenueChart = ({ revenueChartData }) => {
   const { darkMode } = useContext(ThemeContext);
 
-  const axisColor = darkMode ? "#9CA3AF" : "#6B7280"; 
-  const textColor = darkMode ? "#E5E7EB" : "#1F2937"; 
-  const gridStroke = darkMode ? "#374151" : "#E5E7EB"; 
+  const axisColor = darkMode ? "#9CA3AF" : "#6B7280";
+  const textColor = darkMode ? "#E5E7EB" : "#1F2937";
+  const gridStroke = darkMode ? "#374151" : "#E5E7EB";
 
   return (
     <>

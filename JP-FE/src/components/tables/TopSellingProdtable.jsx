@@ -1,6 +1,6 @@
-import { products } from "../../mockData/dashboardData";
+// import { products } from "../../mockData/dashboardData";
 
-export default function TopSellingProductsTable({ darkMode }) {
+export default function TopSellingProductsTable({ darkMode ,products }) {
   const textColor = darkMode ? "#E5E7EB" : "#1C1C1C";
   const borderColor = darkMode ? "rgba(229, 231, 235, 0.4)" : "#1C1C1C66";
 

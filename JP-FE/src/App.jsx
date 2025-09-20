@@ -10,21 +10,24 @@ import Header from "./components/header/Header";
 import RightSidebar from "./components/sidebar/RightSidebar";
 import Sidebar from "./components/sidebar/SideBar";
 import ThemeContext, { ThemeProvider } from "./context/ThemeContext";
+import { useDashboardData } from "./hooks/useDashboardData";
 import Dashboard from "./pages/Dashboard";
 import OrderList from "./pages/OrderList";
 import setSideNavParams from "./utils/SetSidenavVisibilty";
+import Loader from "./components/Loader";
 
 function AppContent() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { darkMode } = useContext(ThemeContext); 
+  const { darkMode } = useContext(ThemeContext);
+  const { data: sideBarMenu, loading } = useDashboardData("sidebar");
 
   useEffect(() => {
     if (darkMode) {
-      document.body.style.backgroundColor = "#121212"; 
-      document.body.style.color = "#E5E7EB"; 
+      document.body.style.backgroundColor = "#121212";
+      document.body.style.color = "#E5E7EB";
     } else {
-      document.body.style.backgroundColor = "#ffffff"; 
+      document.body.style.backgroundColor = "#ffffff";
       document.body.style.color = "#1C1C1C";
     }
 
@@ -56,14 +59,18 @@ function AppContent() {
       rightsidenav: params.get("rightsidenav") === "true",
     };
   }, [location.search]);
-
+  if (loading) {
+    return <Loader />;
+  }
   return (
     <div
       className={`flex bg-${darkMode ? "[#121212]" : "white"} text-${
         darkMode ? "gray-200" : "gray-900"
       }`}
     >
-      {queryParams?.leftsidenav && <Sidebar darkMode={darkMode} />}
+      {queryParams?.leftsidenav && (
+        <Sidebar darkMode={darkMode} sideBarMenu={sideBarMenu} />
+      )}
       <div
         className="flex-1 w-full flex flex-col"
         style={{
@@ -81,7 +88,9 @@ function AppContent() {
           <Route path="/pages/*" element={<OrderList darkMode={darkMode} />} />
         </Routes>
       </div>
-      {queryParams?.rightsidenav && <RightSidebar darkMode={darkMode} />}
+      {queryParams?.rightsidenav && (
+        <RightSidebar darkMode={darkMode} sideBarMenu={sideBarMenu} />
+      )}
     </div>
   );
 }
